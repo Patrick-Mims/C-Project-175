@@ -5,6 +5,6 @@
 #define INDEX 20
 
 void store(char *);
-char *read(char[], int);
+void read(char[], int, int);
 
 #endif
