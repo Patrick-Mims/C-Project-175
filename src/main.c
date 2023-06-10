@@ -3,7 +3,13 @@
 
 #include "project.h"
 
-int read(char str[], int n)
+// ...using an array of pointers to keep track of the strings
+void store(char *word)
+{
+    printf("I will attempt to store this word => %s\n", word); 
+}
+
+char *read(char str[], int n)
 {
     char *strPtr = NULL;
     int character;
@@ -29,18 +35,24 @@ int read(char str[], int n)
 
     strcpy(strPtr, str);
 
+    store(strPtr);
+
     printf("strPtr => %s\n", strPtr);
 
     free(strPtr);
 
     // return the length of the string
-    return strlen(str);
+    // return strlen(str);
+    return str;
 }
 
 int main(int argc, char **argv)
 {
     int count = 0, len = 0;
     char *message[INDEX];
+    const int SIZE = 3;
+    char *ptr[SIZE];
+    char *result = NULL;
 
     printf("Welcome\n");
 
@@ -48,12 +60,61 @@ int main(int argc, char **argv)
     {
         printf("Enter word: ");
 
-        len = read(message, INDEX);
+        //len = read(message, INDEX);
+        //ptr[count] = read(message, INDEX);
+        ptr[count] = read(message, INDEX);
 
-        printf("[word lenth]: %d\n", len);
+        //printf("[word lenth]: %d - %s\n", len, *ptr[count]);
 
         count++;
-    } while(count < 2);
+    } while(count < SIZE);
+
+    for(int i = 0; i < SIZE; i++)
+    {
+        printf("=> %s\n", ptr[i]);
+    }
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,6 +4,7 @@
 // Assume that each word is no more than 20 characters long
 #define INDEX 20
 
-int read(char[], int);
+void store(char *);
+char *read(char[], int);
 
 #endif
