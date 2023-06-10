@@ -12,7 +12,6 @@ void store(char *word)
 void read(char str[], int n, int c)
 {
     char *storage[3];
-    char *strPtr = NULL;
     int character;
     int i = 0, j;
     static int counter = 0;
@@ -45,19 +44,6 @@ void read(char str[], int n, int c)
             printf("storage => %s\n", storage[j]);
         }
     }
-
-/*
-    */
-
-    //storage[c] = &str;
-
-    //strcpy(strPtr, str);
-    // store(strPtr);
-    //printf("strPtr => %s\n", strPtr);
-
-    free(strPtr);
-    // return the length of the string
-    // return strlen(str);
 }
 
 int main(int argc, char **argv)
@@ -71,62 +57,12 @@ int main(int argc, char **argv)
 
     do 
     {
-        printf("Enter word: ");
+        printf("Enter word %d: ", count);
 
         read(message, INDEX, count);
 
         count++;
     } while(count < SIZE);
 
-/*
-    // Print the Array
-    for(int i = 0; i < SIZE; i++)
-    {
-        printf("=> %s\n", message[i]);
-    }
-    */
-
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
