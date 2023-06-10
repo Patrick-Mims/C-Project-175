@@ -20,6 +20,7 @@ int read(char str[], int n)
 
     str[i] = '\0';
 
+    // malloc the string
     if((strPtr = malloc(sizeof(strlen(str) + 1))) == NULL)
     {
         printf("Cannot Allocate Memory\n");
