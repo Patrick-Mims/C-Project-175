@@ -3,21 +3,13 @@
 
 #include "project.h"
 
-// ...using an array of pointers to keep track of the strings
-void store(char *word)
-{
-    printf("I will attempt to store this word => %s\n", word); 
-}
-
-void read(char str[], int n, int c)
+void read(char str[], int n)
 {
     char *storage[3];
     int character;
     int i = 0, j;
     static int counter = 0;
 
-
-    // get the string
     while((character = getchar()) != '\n')
     {
         if(i < n)
@@ -28,7 +20,7 @@ void read(char str[], int n, int c)
 
     str[i] = '\0';
 
-    if((storage[c] = malloc(sizeof(char) * INDEX)) == NULL)
+    if((storage[counter] = malloc(sizeof(char) * INDEX)) == NULL)
     {
         printf("Cannot Allocate Memory\n");
         exit("EXIT_FAILURE");
@@ -48,19 +40,15 @@ void read(char str[], int n, int c)
 
 int main(int argc, char **argv)
 {
-    int count = 0, len = 0;
+    int count = 0;
     char *message[INDEX];
-    const int SIZE = 3;
-    char *ptr[SIZE];
 
     printf("Welcome\n");
 
     do 
     {
         printf("Enter word %d: ", count);
-
-        read(message, INDEX, count);
-
+        read(message, INDEX);
         count++;
     } while(count < SIZE);
 
